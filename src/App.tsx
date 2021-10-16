@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useEffect, useState } from "react"
+import logo from "./logo.svg"
+import "./App.css"
 
-function App() {
+const App = () => {
+  const [data, setData] = useState(null)
+
+  useEffect(() => {
+    fetch("/api/status")
+      .then((response) => response.json())
+      .then((response) => setData(response))
+  })
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="App-title">Welcome to React</h1>
       </header>
+      <p className="App-intro">{!data ? "Loading..." : data}</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
