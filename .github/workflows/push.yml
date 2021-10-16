@@ -16,4 +16,3 @@ jobs:
       - name: publish to prod.
       - run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
       - run: ${{ secrets.PASS_CONNECTION_SERVER }}
-        
