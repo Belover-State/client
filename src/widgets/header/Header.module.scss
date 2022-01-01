@@ -1,0 +1,20 @@
+.header {
+    background: var(--melanit-background-violet);
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    padding: 0 25px;
+
+    &__logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    &__left,
+    &__right {
+        padding: 5px;
+    }
+}

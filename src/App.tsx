@@ -1,6 +1,10 @@
-import React, { Component, useEffect, useState } from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import React, { useEffect, useState } from "react"
+
+import cx from 'classnames'
+import css from './App.module.scss'
+
+import { Header } from "./widgets/header/Header"
+import { ReactComponent as Intro } from './components/icons/intro.svg'
 
 const App = () => {
   const [data, setData] = useState(null)
@@ -12,11 +16,8 @@ const App = () => {
   })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">Hello world!</h1>
-      </header>
-      <p className="App-intro">{!data ? "Loading..." : data}</p>
+      <Header />
+      <Intro className={cx(css.intro)} />
     </div>
   )
 }
