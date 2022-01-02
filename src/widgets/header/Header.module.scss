@@ -13,8 +13,8 @@
         height: 35px;
     }
 
-    &__left,
-    &__right {
+    &__left.container,
+    &__right.container {
         padding: 5px;
     }
 }
