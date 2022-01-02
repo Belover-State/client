@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm run build
+      - run: npm install && npm run build
 
       - run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
       - run: ${{ secrets.PASS_CONNECTION_SERVER }}
