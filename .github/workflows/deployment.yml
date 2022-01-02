@@ -3,9 +3,9 @@ on:
     branches:
       - master
 
-name: build and publish
+name: build and deployment
 jobs:
-  build-and-publish:
+  deployment:
     name: build and publish
     runs-on: ubuntu-latest
     steps:
