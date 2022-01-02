@@ -13,6 +13,5 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm run build
 
-      - name: publish to prod.
-        run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
-        run: echo ${{ secrets.PASS_CONNECTION_SERVER }}
+      - run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
+      - run: ${{ secrets.PASS_CONNECTION_SERVER }}
