@@ -6,8 +6,8 @@ on:
 name: build and deployment
 jobs:
   deployment:
-    name: build and publish
     runs-on: ubuntu-latest
+
     steps:
       - name: build
         uses: actions/checkout@v2
@@ -15,5 +15,5 @@ jobs:
         run: npm run build
 
       - name: publish to prod.
-      - run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
-      - run: ${{ secrets.PASS_CONNECTION_SERVER }}
+        run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
+        run: ${{ secrets.PASS_CONNECTION_SERVER }}
