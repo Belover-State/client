@@ -9,9 +9,10 @@ jobs:
     name: build and publish
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm run build
+      - name: build
+        uses: actions/checkout@v2
+        uses: actions/setup-node@v1
+        run: npm run build
 
       - name: publish to prod.
       - run: scp ./build ${{ secrets.LOGIN_CONNECTION_SERVER }}:/var/www/web/build
